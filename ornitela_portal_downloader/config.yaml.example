@@ -4,6 +4,7 @@ gps_sensors_v2_local: . # where to save GPS+SENSORS_V2 data
 gps_local: . # where to save GPS data
 gps_sensors_v2_remote: . # where to sync GPS+SENSORS_V2 data
 gps_remote: . # where to sync GPS data
+rclone_config: /path/to/rclone.conf # rclone configuration file
 tags: # tag serial numbers and portal IDs
   191989: dl014869002838482cc
   191990: dl014869002850008cc

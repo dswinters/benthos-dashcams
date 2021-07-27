@@ -14,7 +14,7 @@ cp download_month.py /usr/local/DASHCAMS
 cp portal_box_sync.sh /usr/local/DASHCAMS
 cp -r classes /usr/local/DASHCAMS
 
-# Enable timer
+# Enable timers
 systemctl enable dashcams-ornitela-download-month.timer
 systemctl enable dashcams-ornitela-download-prev-month.timer
 systemctl restart dashcams-ornitela-download-month.timer
