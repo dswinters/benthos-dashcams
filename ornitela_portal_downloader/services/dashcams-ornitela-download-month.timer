@@ -1,0 +1,8 @@
+[Unit]
+Description=Download Ornitela data weekly
+
+[Timer]
+OnCalendar=Mon,Thu *-*-* 06:00:00
+
+[Install]
+WantedBy=timers.target

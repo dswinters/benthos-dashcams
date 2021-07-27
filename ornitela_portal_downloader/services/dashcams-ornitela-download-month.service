@@ -1,0 +1,7 @@
+[Unit]
+Description=Download all Ornitela data from the current month
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/DASHCAMS/download_month.py
+Group=dashcams
