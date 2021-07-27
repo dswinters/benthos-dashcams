@@ -4,4 +4,5 @@ Description=Download all Ornitela data from the current month
 [Service]
 Type=oneshot
 ExecStart=/usr/local/DASHCAMS/download_month.py
+ExecStartPost=/usr/local/DASHCAMS/portal_box_sync.sh
 Group=dashcams

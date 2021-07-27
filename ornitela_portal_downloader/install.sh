@@ -11,6 +11,7 @@ cp services/dashcams-ornitela-download-prev-month.timer /etc/systemd/system
 mkdir -p /usr/local/DASHCAMS
 cp config.yaml /usr/local/DASHCAMS/ornitela_config.yaml
 cp download_month.py /usr/local/DASHCAMS
+cp portal_box_sync.sh /usr/local/DASHCAMS
 cp -r classes /usr/local/DASHCAMS
 
 # Enable timer
