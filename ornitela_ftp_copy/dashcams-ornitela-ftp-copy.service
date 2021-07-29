@@ -1,0 +1,7 @@
+[Unit]
+Description=copy files from the CEOAS FTP server to local storage and Box
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/DASHCAMS/ornitela_ftp_copy.sh
+Group=dashcams

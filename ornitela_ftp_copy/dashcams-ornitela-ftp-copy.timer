@@ -1,0 +1,9 @@
+[Unit]
+Description=Periodically checks for new files from Ornitela on the CEOAS FTP server
+
+[Timer]
+OnUnitActiveSec=3600
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target
