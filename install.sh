@@ -5,8 +5,8 @@ sudo cp ornitela_portal_downloader/services/dashcams-ornitela-download-month.ser
 sudo cp ornitela_portal_downloader/services/dashcams-ornitela-download-month.timer        /etc/systemd/system
 sudo cp ornitela_portal_downloader/services/dashcams-ornitela-download-prev-month.service /etc/systemd/system
 sudo cp ornitela_portal_downloader/services/dashcams-ornitela-download-prev-month.timer   /etc/systemd/system
-sudo cp ornitela_ftp_copy/ornitela_ftp_copy.service   /etc/systemd/system
-sudo cp ornitela_ftp_copy/ornitela_ftp_copy.timer     /etc/systemd/system
+sudo cp ornitela_ftp_copy/dashcams-ornitela-ftp-copy.service   /etc/systemd/system
+sudo cp ornitela_ftp_copy/dashcams-ornitela-ftp-copy.timer     /etc/systemd/system
 
 
 # Copy configuration and executables
