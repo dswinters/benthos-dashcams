@@ -8,7 +8,7 @@ warning('off','MATLAB:table:ModifiedAndSavedVarnames');
 dir_in = '/home/DASHCAMS/data_raw/ornitela_gps_sensors_v2';
 dir_out = '../data/processed/ornitela_bursts';
 files = dir(fullfile(dir_in,'*.csv'));
-overwrite = true;
+overwrite = false;
 
 % Get unique tag IDs
 ids = unique(cellfun(@(c) c(1:6),{files.name},'uniformoutput',false));
