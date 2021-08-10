@@ -31,7 +31,7 @@ class Ornitela_Downloader:
             print('Login success')
 
     def gen_request(self, serial, from_time, to_time, dtype):
-        request = {"dnlselpm": '500p',
+        request = {"dnlselpm": '10000p',
                    "dnlfromdt": from_time.strftime("%Y-%m-%d %H:%M"),
                    "dnltodt": to_time.strftime("%Y-%m-%d %H:%M"),
                    "dnlselkk": '1',
@@ -46,7 +46,7 @@ class Ornitela_Downloader:
         to_time = datetime(year, month+1, 1, 0, 0, 0)
         fname = "{0:06d}_{1:04d}_{2:02d}.csv".format(serial, year, month)
         reqs = {'gps_sensors_v2': self.gen_request(serial, from_time, to_time, 3),
-                'gps': self.gen_request(serial, from_time, to_time, 3)}
+                'gps': self.gen_request(serial, from_time, to_time, 1)}
 
         # Send each request to portal
         for k, r in reqs.items():
