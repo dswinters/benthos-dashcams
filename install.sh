@@ -13,7 +13,7 @@ sudo cp ornitela_ftp_copy/dashcams-ornitela-ftp-copy.timer     /etc/systemd/syst
 sudo mkdir -p /usr/local/DASHCAMS
 sudo cp config.yaml                                   /usr/local/DASHCAMS/ornitela_config.yaml
 sudo cp ornitela_portal_downloader/download_month.py  /usr/local/DASHCAMS
-sudo cp ornitela_portal_downloader/portal_box_sync.sh /usr/local/DASHCAMS
+sudo cp ornitela_portal_downloader/ornitela_post_download.sh /usr/local/DASHCAMS
 sudo cp -r ornitela_portal_downloader/classes         /usr/local/DASHCAMS
 sudo cp ornitela_ftp_copy/ornitela_ftp_copy.sh        /usr/local/DASHCAMS
 
