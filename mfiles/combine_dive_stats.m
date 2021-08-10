@@ -5,6 +5,7 @@ file_out = '../data/processed/ornitela_dives.csv';
 files = dir(fullfile(dir_in,'*.mat'));
 first = true;
 
+dive_stats = [];
 for i = 1:length(files)
     load(fullfile(files(i).folder,files(i).name),'dive_stats');
     if ~isempty(dive_stats)
