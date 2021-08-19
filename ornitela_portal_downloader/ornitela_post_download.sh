@@ -29,6 +29,12 @@ remote="DASHCAMS/data/Processed"
 echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf copy "$local" "box:$remote"
 
+# Copy locations file
+local="/home/dw/projects/DASHCAMS/data/processed/ornitela_gps.csv"
+remote="DASHCAMS/data/Processed"
+echo "Syncing $local to box:$remote"
+rclone --config $rclone_conf copy "$local" "box:$remote"
+
 # Copy processed data files
 local="/home/dw/projects/DASHCAMS/data/processed/ornitela_bursts"
 remote="DASHCAMS/data/Processed/ornitela_bursts"
