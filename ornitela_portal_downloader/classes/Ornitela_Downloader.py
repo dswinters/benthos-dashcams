@@ -31,7 +31,7 @@ class Ornitela_Downloader:
             print('Login success')
 
     def gen_request(self, serial, from_time, to_time, dtype):
-        request = {"dnlselpm": '10000p',
+        request = {"dnlselpm": '500p',
                    "dnlfromdt": from_time.strftime("%Y-%m-%d %H:%M"),
                    "dnltodt": to_time.strftime("%Y-%m-%d %H:%M"),
                    "dnlselkk": '1',
