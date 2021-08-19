@@ -10,14 +10,14 @@ echo "Running MATLAB processing..."
 # Path to installed config file
 config=/usr/local/DASHCAMS/ornitela_config.yaml
 
-# Copy GPS+SENSORS_V2
+# Copy raw GPS+SENSORS_V2
 local=$(yq -r .gps_sensors_v2_local $config)
 remote=$(yq -r .gps_sensors_v2_remote $config)
 rclone_conf=$(yq -r .rclone_config $config)
 echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf sync "$local" "box:$remote"
 
-# Copy GPS
+# Copy raw GPS
 local=$(yq -r .gps_local $config)
 remote=$(yq -r .gps_remote $config)
 echo "Syncing $local to box:$remote"
@@ -34,6 +34,13 @@ local="/home/dw/projects/DASHCAMS/data/processed/ornitela_gps.csv"
 remote="DASHCAMS/data/Processed"
 echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf copy "$local" "box:$remote"
+
+# Copy between_dive_invervals file
+local="/home/dw/projects/DASHCAMS/data/processed/between_dive_intervals.mat"
+remote="DASHCAMS/data/Processed"
+echo "Syncing $local to box:$remote"
+rclone --config $rclone_conf copy "$local" "box:$remote"
+
 
 # Copy processed data files
 local="/home/dw/projects/DASHCAMS/data/processed/ornitela_bursts"

@@ -9,8 +9,8 @@ warning('off','MATLAB:table:ModifiedAndSavedVarnames');
 %           data/processed/ornitela_bursts_summary.txt
 % REQUIRES: ornitela_v2_timestamp_correction.m, find_bottom_segment.m, maxidx.m,
 %           is_in_deployment.m, ll2utm.m, proc_dive_stats.m
-disp('Processing all sensor bursts')
 proc_bursts_v2
+proc_between_dive_intervals_v2
 
 %% Combine all dive stats into a single .csv file
 combine_dive_stats()
