@@ -1,0 +1,7 @@
+[Unit]
+Description=Download DASHCAMS_Deployment_Field_Data.csv from Box
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/DASHCAMS/dashcams-download-field-data.sh
+Group=dashcams
