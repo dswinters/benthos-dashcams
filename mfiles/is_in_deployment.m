@@ -14,7 +14,9 @@ opts.SelectedVariableNames = {
     'TagManufacture',
     'TagSerialNumber',
     'DeploymentStartDatetime',
-    'DeploymentEndDatetime_UTC'};
+    'DeploymentEndDatetime_UTC',
+    'Deployment_End_Notes',
+                   };
 fdata = readtable(fdata_csv,opts);
 
 % Filter to Ornitela
@@ -57,6 +59,9 @@ for i = 1:length(uid)
 
     % NaT --> not recorded --> undetermined end-time
     dn1(isnan(dn1)) = inf;
+
+    % TODO: This is sloppy, resolve this...
+    dn1(strcmp(deps.Deployment_End_Notes,'***Active')) = inf;
 
     % Set yn to true for each dn within deployments
     m = id==uid(i); % mask to this id
