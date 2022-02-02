@@ -1,0 +1,8 @@
+[Unit]
+Description=Download last 24h of ornitela data
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/DASHCAMS/download_last_24h.py
+ExecStartPost=/usr/local/DASHCAMS/ornitela_copy_24h_data.sh
+Group=dashcams

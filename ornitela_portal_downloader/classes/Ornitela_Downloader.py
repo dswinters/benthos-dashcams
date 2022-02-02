@@ -65,3 +65,20 @@ class Ornitela_Downloader:
                     print("Skipped {}".format(fpath))
                 else:
                     print("Saved {}".format(fpath))
+
+    def download_date_range(self, serial, from_time, to_time, fname):
+
+        # Generate request(s)
+        reqs = {'gps_sensors_v2': self.gen_request(serial, from_time, to_time, 3)}
+
+        # Send each request to portal
+        for k, r in reqs.items():
+            response = self.s.post(self.url, data=r)
+
+            # Download file if request is successful
+            if response.status_code == 200:
+                with open(fname, 'wb') as f:
+                    for chunk in response.iter_content(chunk_size=128):
+                        f.write(chunk)
+
+                print("Saved {}".format(fname))
