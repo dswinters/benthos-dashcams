@@ -43,7 +43,11 @@ class Ornitela_Downloader:
 
         # Generate requests
         from_time = datetime(year, month, 1, 0, 0, 0)
-        to_time = datetime(year, month+1, 1, 0, 0, 0)
+        if month==12:
+            to_time = datetime(year+1, 1, 1, 0, 0, 0)
+        else:
+            to_time = datetime(year, month+1, 1, 0, 0, 0)
+
         fname = "{0:06d}_{1:04d}_{2:02d}.csv".format(serial, year, month)
         reqs = {'gps_sensors_v2': self.gen_request(serial, from_time, to_time, 3),
                 'gps': self.gen_request(serial, from_time, to_time, 1)}
