@@ -14,8 +14,10 @@ find $ftp_dir -newermt "-61 minutes" -type f -printf "%f\n"> $tmp_file_list
 
 # Copy them to local storage
 for file in $(<$tmp_file_list); do
-  echo $file
-  cp "$ftp_dir/$file" "$local_dir/$file"
+  if [[ $file == *.csv ]]; then
+    echo $file
+    cp "$ftp_dir/$file" "$local_dir/$file"
+  fi
 done
 
 # Copy new files to Box
