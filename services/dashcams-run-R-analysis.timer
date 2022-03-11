@@ -1,5 +1,5 @@
 [Unit]
-Description=Download last 24h of Ornitela data daily
+Description=Timer to run R analysis scripts from Rachael and upload to Box
 
 [Timer]
 OnCalendar=*-*-* 05:00:00

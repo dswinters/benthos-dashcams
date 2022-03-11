@@ -1,8 +1,7 @@
 [Unit]
-Description=Download last 24h of ornitela data
+Description=Run R analysis scripts from Rachael and upload to Box
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/DASHCAMS/download_last_24h.py
-ExecStartPost=/usr/local/DASHCAMS/ornitela_copy_24h_data.sh
+ExecStart=/usr/local/DASHCAMS/dashcams-run-R-analysis.sh
 Group=dashcams
