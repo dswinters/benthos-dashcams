@@ -3,7 +3,7 @@
 
 # Do MATLAB processing
 echo "Running MATLAB processing..."
-/usr/local/bin/matlab -nodisplay -r "run('/home/DASHCAMS/git/benthos-dashcams/mfiles/run_after_download.m')"
+/usr/local/bin/matlab -nodisplay -r "run('/home/DASHCAMS/git/benthos-dashcams/mfiles/run_after_download.m')" > /dev/null
 
 # Sync files to Box with rclone
 
