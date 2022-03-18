@@ -7,7 +7,7 @@ local_dir=/home/DASHCAMS/data_raw/ornitela_ftp
 tmp_file_list=/home/DASHCAMS/ornitela_new_ftp.txt
 
 config=/usr/local/DASHCAMS/ornitela_config.yaml
-rclone_conf=$(yq -r .rclone_config $config)
+rclone_conf=$(yq e .rclone_config $config)
 
 # Find new files
 find $ftp_dir -newermt "-61 minutes" -type f -printf "%f\n"> $tmp_file_list

@@ -2,7 +2,7 @@
 
 # Get rclone config info from our config file
 config=/usr/local/DASHCAMS/ornitela_config.yaml
-rclone_conf=$(yq -r .rclone_config $config)
+rclone_conf=$(yq e .rclone_config $config)
 
 # Run Rachael's R processing
 dir_in=/home/DASHCAMS/data_raw/ornitela_ftp/
