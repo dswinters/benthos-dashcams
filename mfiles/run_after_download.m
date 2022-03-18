@@ -1,5 +1,3 @@
-setenv('DASHCAMS','/home/dw/projects/DASHCAMS')
-
 % Don't warn about renaming csv headers using readtable
 warning('off','MATLAB:table:ModifiedAndSavedVarnames');
 

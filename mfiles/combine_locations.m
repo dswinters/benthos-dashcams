@@ -1,7 +1,7 @@
 function combine_locations()
 
-dir_in = '../data/processed/ornitela_bursts';
-file_out = '../data/processed/ornitela_gps.csv';
+dir_in = '/home/DASHCAMS/data_processed/ornitela_bursts';
+file_out = '/home/DASHCAMS/data_processed/ornitela_gps.csv';
 files = dir(fullfile(dir_in,'*.mat'));
 first = true;
 

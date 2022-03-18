@@ -3,8 +3,8 @@
 % 2) Between-dive bursts
 
 clear all, close all
-dir_in = '../data/processed/ornitela_bursts';
-file_out = '../data/processed/between_dive_intervals.mat';
+dir_in = '/home/DASHCAMS/data_processed/ornitela_bursts';
+file_out = '/home/DASHCAMS/data_processed/between_dive_intervals.mat';
 files = dir(fullfile(dir_in,'*.mat'));
 
 bdive = struct('duration',{},'ngps',{},'nburst',{},...

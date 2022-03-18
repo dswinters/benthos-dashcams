@@ -1,12 +1,11 @@
 % Extract sensor bursts using the GPS+SENSORS_V2 data format and
 % ornitela_v2_timestamp_correction.m.
 %
-% See ../data/processed/ornitela_bursts/readme.txt
 %
 clear all, close all
 warning('off','MATLAB:table:ModifiedAndSavedVarnames');
 dir_in = '/home/DASHCAMS/data_raw/ornitela_gps_sensors_v2';
-dir_out = '../data/processed/ornitela_bursts';
+dir_out = '/home/DASHCAMS/data_processed/ornitela_bursts';
 files = dir(fullfile(dir_in,'*.csv'));
 overwrite = false;
 
@@ -180,12 +179,12 @@ for i = 1:length(files)
 end
 
 
-fid = fopen('../data/processed/ornitela_bursts_summary.txt','w');
+return
+
+fid = fopen('/home/DASHCAMS/data_processed/ornitela_bursts_summary.txt','w');
 for i = 1:length(vars)
     fprintf(fid,'|%s|%.2f|\n',vars{i},durs(i));
 end
-
-return
 
 %% Count total dives and dives/day
 days_total = nan(length(files),1);

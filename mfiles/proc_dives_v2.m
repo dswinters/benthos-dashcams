@@ -25,7 +25,7 @@ BOTTOM_TIME = {};
 BOTTOM_DEPTH = {};
 BOTTOM_NUM = {};
 
-dir_in = '../data/processed/ornitela_bursts';
+dir_in = '/home/DASHCAMS/data_processed/ornitela_bursts';
 files = dir(fullfile(dir_in,'*.mat'));
 
 IGNORED = zeros(size(files));
@@ -135,8 +135,8 @@ dives = table(ID(~rm), datetime(TIME(~rm),'convertfrom','datenum'), DEPTH(~rm), 
 [~,sidx] = sort(dives.time);
 dives = dives(sidx,:);
 
-writetable(dives,'../data/processed/dives.csv');
-disp('Wrote ../data/processed/dives.csv')
+writetable(dives,'/home/DASHCAMS/data_processed/dives.csv');
+disp('Wrote /home/DASHCAMS/data_processed/dives.csv')
 
 bottom = struct();
 bottom.time = BOTTOM_TIME;
@@ -181,5 +181,5 @@ bottom.age_pre = (tmp - bottom.time_pre)*86400;
 tmp = cellfun(@(x) x(end), bottom.time);
 bottom.age_post = (bottom.time_post - tmp)*86400;
 
-save('../data/processed/bottom_segments.mat','-struct','bottom');
-disp('Wrote ../data/processed/bottom_segments.mat')
+save('/home/DASHCAMS/data_processed/bottom_segments.mat','-struct','bottom');
+disp('Wrote /home/DASHCAMS/data_processed/bottom_segments.mat')

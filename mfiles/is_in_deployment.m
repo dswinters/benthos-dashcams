@@ -5,7 +5,7 @@
 function yn = is_in_deployment(dn,id,location);
 
 % Deployment file
-fdata_csv = '../data/DASHCAMS_Deployment_Field_Data.csv';
+fdata_csv = '/home/DASHCAMS/data_raw/metadata/DASHCAMS_Deployment_Field_Data.csv';
 opts = detectImportOptions(fdata_csv);
 
 % Read tag deployment times

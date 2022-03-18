@@ -3,7 +3,7 @@
 
 # Do MATLAB processing
 echo "Running MATLAB processing..."
-/usr/local/bin/matlab -nodisplay -r "run('/home/dw/projects/DASHCAMS/mfiles/run_after_download.m')" > /dev/null
+/usr/local/bin/matlab -nodisplay -r "run('/home/DASHCAMS/git/benthos-dashcams/mfiles/run_after_download.m')"
 
 # Sync files to Box with rclone
 
@@ -24,26 +24,26 @@ echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf sync "$local" "box:$remote"
 
 # Copy dives file
-local="/home/dw/projects/DASHCAMS/data/processed/ornitela_dives.csv"
+local="/home/DASHCAMS/data_processed/ornitela_dives.csv"
 remote="DASHCAMS/data/Processed"
 echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf copy "$local" "box:$remote"
 
 # Copy locations file
-local="/home/dw/projects/DASHCAMS/data/processed/ornitela_gps.csv"
+local="/home/DASHCAMS/data_processed/ornitela_gps.csv"
 remote="DASHCAMS/data/Processed"
 echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf copy "$local" "box:$remote"
 
 # Copy between_dive_invervals file
-local="/home/dw/projects/DASHCAMS/data/processed/between_dive_intervals.mat"
+local="/home/DASHCAMS/data_processed/between_dive_intervals.mat"
 remote="DASHCAMS/data/Processed"
 echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf copy "$local" "box:$remote"
 
 
 # Copy processed data files
-local="/home/dw/projects/DASHCAMS/data/processed/ornitela_bursts"
+local="/home/DASHCAMS/data_processed/ornitela_bursts"
 remote="DASHCAMS/data/Processed/ornitela_bursts"
 echo "Syncing $local to box:$remote"
 rclone --config $rclone_conf sync "$local" "box:$remote"
