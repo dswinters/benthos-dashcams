@@ -73,10 +73,27 @@ for i = 1:length(files)
 
 end
 
-if length(failures) > 0
-    fprintf('%d failures in last %d day(s):\n', length(failures), ndays)
+% You could do anything with the 'failures' struct created above.
+
+% Example: Print them all to stdout
+% if length(failures) > 0
+%     fprintf('%d failures in last %d day(s):\n', length(failures), ndays)
+%     for i = 1:length(failures)
+%         fprintf('%d: %s on or around %s\n',...
+%                 failures(i).id, failures(i).reason, datestr(failures(i).time))
+%     end
+% end
+
+
+% Example: Combine them into one message and send them to slack
+fid = fopen('/home/DASHCAMS/tag_failures.txt','w');
+if length(fields(failures)) > 0
+    fprintf(fid,'%d failures in last %d day(s):', length(failures), ndays);
     for i = 1:length(failures)
-        fprintf('%d: %s on or around %s\n',...
-                failures(i).id, failures(i).reason, datestr(failures(i).time))
+        fprintf(fid,'\n  %d: %s on or around %s',...
+                failures(i).id, failures(i).reason, datestr(failures(i).time));
     end
 end
+fclose(fid);
+
+exit

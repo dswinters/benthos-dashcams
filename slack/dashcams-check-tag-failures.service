@@ -1,0 +1,7 @@
+[Unit]
+Description=Check for tag failures
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/DASHCAMS/dashcams-check-tag-failures.sh
+Group=dashcams

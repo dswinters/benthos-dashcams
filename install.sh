@@ -11,6 +11,8 @@ sudo cp services/dashcams-download-field-data.service                           
 sudo cp services/dashcams-download-field-data.timer                                       /etc/systemd/system
 sudo cp services/dashcams-run-R-analysis.service                                          /etc/systemd/system
 sudo cp services/dashcams-run-R-analysis.timer                                            /etc/systemd/system
+sudo cp slack/dashcams-check-tag-failures.service                                         /etc/systemd/system
+sudo cp slack/dashcams-check-tag-failures.timer                                           /etc/systemd/system
 
 
 # Copy configuration and executables
@@ -23,7 +25,9 @@ sudo cp -r ornitela_portal_downloader/classes                /usr/local/DASHCAMS
 sudo cp ornitela_ftp_copy/ornitela_ftp_copy.sh               /usr/local/DASHCAMS
 sudo cp services/dashcams-download-field-data.sh             /usr/local/DASHCAMS
 sudo cp services/dashcams-run-R-analysis.sh                  /usr/local/DASHCAMS
-
+sudo cp slack/dashcams-check-tag-failures.sh                 /usr/local/DASHCAMS
+sudo cp slack/slack.yaml                                     /usr/local/DASHCAMS
+sudo cp slack/send_slack_message.py                          /usr/local/DASHCAMS
 
 # Enable timers
 sudo systemctl enable dashcams-ornitela-download-month.timer
@@ -31,9 +35,11 @@ sudo systemctl enable dashcams-ornitela-download-prev-month.timer
 sudo systemctl enable dashcams-ornitela-ftp-copy.timer
 sudo systemctl enable dashcams-download-field-data.timer
 sudo systemctl enable dashcams-run-R-analysis.timer
+sudo systemctl enable dashcams-check-tag-failures.timer
 
 sudo systemctl restart dashcams-ornitela-download-month.timer
 sudo systemctl restart dashcams-ornitela-download-prev-month.timer
 sudo systemctl restart dashcams-ornitela-ftp-copy.timer
 sudo systemctl restart dashcams-download-field-data.timer
 sudo systemctl restart dashcams-run-R-analysis.timer
+sudo systemctl restart dashcams-check-tag-failures.timer
